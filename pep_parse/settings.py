@@ -9,9 +9,7 @@ NEWSPIDER_MODULE = 'pep_parse.spiders'
 
 ROBOTSTXT_OBEY = True
 
-ITEM_PIPELINES = {
-   'pep_parse.pipelines.PepParsePipeline': 300,
-}
+ITEM_PIPELINES = {'pep_parse.pipelines.PepParsePipeline': 300}
 
 FEED_EXPORT_ENCODING = "utf-8"
 FEEDS = {
