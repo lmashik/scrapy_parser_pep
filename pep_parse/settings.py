@@ -21,4 +21,3 @@ FEEDS = {
         'overwrite': True
     },
 }
-
