@@ -1,7 +1,7 @@
 import datetime as dt
 from collections import defaultdict
 
-from .settings import BASE_DIR
+from .settings import BASE_DIR, DATE_FORMAT, RESULT_FOLDER_NAME
 
 
 class PepParsePipeline:
@@ -12,13 +12,13 @@ class PepParsePipeline:
         pass
 
     def process_item(self, item, spider):
-        self.total += 1
         self.status_dict[item['status']] += 1
         return item
 
     def close_spider(self, spider):
-        current_datetime = str(dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
-        filename = 'results/status_summary_' + current_datetime + '.csv'
+        self.total = sum(self.status_dict.values())
+        current_dt = str(dt.datetime.now().strftime(DATE_FORMAT))
+        filename = f'{RESULT_FOLDER_NAME}/status_summary_{current_dt}.csv'
         with open(
             BASE_DIR / filename, mode='w', encoding='utf-8'
         ) as f:
