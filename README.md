@@ -1,10 +1,10 @@
-# Проект парсинга документов PEP
+# Парсинг документов PEP
 
 ----------------------------------------
 ## Описание
 
 Данный парсер поможет собрать статусы документов PEP, а также получить 
-информацию, сколько из них в каждом статусе
+информацию, сколько из них в каждом статусе.
 
 ----------------------------------------
 ## Используемые технологии
@@ -22,19 +22,19 @@ git clone https://github.com/lmashik/scrapy_parser_pep.git
 
 2. Создайте и активируйте виртуальное окружение
 ```bash
-python3 -m venv env
+python3.7 -m venv venv
 ```
 
 * Если у вас Linux/macOS
 
     ```bash
-    source env/bin/activate
+    source venv/bin/activate
     ```
 
 * Если у вас windows
 
     ```bash
-    source env/scripts/activate
+    source venv/scripts/activate
     ```
 
 3. Обновите pip до последней версии
@@ -65,4 +65,4 @@ scrapy crawl pep
 ## Автор проекта
 
 Лапикова Мария Дмитриевна
-mashik.mikhaylova@yandex.ru
+mashik_p@mail.ru
